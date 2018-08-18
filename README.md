@@ -43,5 +43,5 @@ $beautify = new Beautify_Html(array(
 ## Credits
 Original project based upon a script made by Ole Michelsen at https://github.com/omichelsen/View-Source
 
-Beautify HTML created by Ivan Weilder at https://github.com/ivanweiler/beautify-html under the MIT license
+Beautify HTML created by Ivan Weiler at https://github.com/ivanweiler/beautify-html under the MIT license
 
