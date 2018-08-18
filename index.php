@@ -33,13 +33,13 @@
 	//Turns URLs into hyperlinks
 	function markup_links($html,$url) {
 		preg_match("/https?:\/\/\S+?(?=\/)/i", $url, $matches);
-		
-		$baseurl = $matches[0];
+
+		$baseurl = $matches[0]; echo $baseurl;
 
 		$regex = array("/(?<=&quot;)(https?:\/\/\S+)(?=&quot;)/i",	// Absolute paths: &quot;http://asdf.com/asdf.php?id=x&ad=y&quot;
 					   "/(?<=&quot;)(\/\S+)(?=&quot;)/i");			// Relative paths: &quot;/scripts/regex-1.1.min.js&quot;
 		
-		$replc = array('<a href="$1">$1</a>', '<a href=\"$baseurl$1\">$1</a>');
+		$replc = array('<a href="$1">$1</a>', '<a href="'.$baseurl.'$1">$1</a>');
 
 		return preg_replace($regex, $replc, $html);
 	}
@@ -63,6 +63,8 @@
 	//Retrieves and decodes source code from URL
 	$html = file_get_contents_curl($url);
 	$html = urldecode($html);
+
+	$html = str_replace('<script', '<script type="text/javascript"', $html);
 
 	//Unminifies HTML
 	$html = unminify_html($html);
