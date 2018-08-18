@@ -34,7 +34,7 @@
 	function markup_links($html,$url) {
 		preg_match("/https?:\/\/\S+?(?=\/)/i", $url, $matches);
 
-		$baseurl = $matches[0]; echo $baseurl;
+		$baseurl = $matches[0];
 
 		$regex = array("/(?<=&quot;)(https?:\/\/\S+)(?=&quot;)/i",	// Absolute paths: &quot;http://asdf.com/asdf.php?id=x&ad=y&quot;
 					   "/(?<=&quot;)(\/\S+)(?=&quot;)/i");			// Relative paths: &quot;/scripts/regex-1.1.min.js&quot;
