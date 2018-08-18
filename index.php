@@ -3,6 +3,8 @@
 
 	include "geshi/geshi.php";
 
+	include "beautify-html.php";
+
 	//Performs cURL HTTP request
 	function file_get_contents_curl($url) {
 	    $ch = curl_init();
@@ -21,13 +23,18 @@
 
 	//Unminifies HTML - does not work on CSS or JS
 	function unminify_html($html) {
-		$dom = new DOMDocument();		
+		$beautify = new Beautify_Html(array(
+		  'indent_inner_html' => true,
+		  'indent_char' => " ",
+		  'indent_size' => 2,
+		  'wrap_line_length' => 32786,
+		  'unformatted' => ['code', 'pre', 'script', 'style'],
+		  'preserve_newlines' => false,
+		  'max_preserve_newlines' => 32786,
+		  'indent_scripts'	=> 'separate' // keep|separate|normal
+		));
 
-		$dom->preserveWhiteSpace = false;
-		$dom->loadHTML($html, LIBXML_HTML_NOIMPLIED);
-		$dom->formatOutput = true;
-
-		return $dom->saveXML($dom->documentElement);
+		return $beautify->beautify($html);
 	}
 
 	//Turns URLs into hyperlinks
@@ -95,6 +102,7 @@
 				white-space: pre-wrap;
 				word-wrap: break-word;
 			}
+
 			<?php echo $stylesheet; ?>
 		</style>
 	</head>
