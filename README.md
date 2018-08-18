@@ -1,12 +1,12 @@
 # View Source
-PHP script that shows the HTML source code of a website with syntax highlighting and code beautifying for use on mobile devices
+PHP script that shows the HTML source code of a website with syntax highlighting and code beautifying for use on mobile devices.
 
 ## Setup
-Setup a web server and upload `index.php`
+Setup a web server and upload `index.php`.
 
-Download the latest version of GeSHi (Generic Syntax Highlighter) from the official website http://qbnz.com/highlighter/ and place the uncompressed folder `geshi` in the same directory of `index.php`
+Download the latest version of GeSHi (Generic Syntax Highlighter) from the official website http://qbnz.com/highlighter/ and place the uncompressed folder `geshi` in the same directory of `index.php`.
 
-On the mobile device, create a bookmark with an approperiate name e.g. `View Source`. In the URL field, enter the contents of `bookmark.js`, making sure to replace `localhost` with the URL of the web server
+On the mobile device, create a bookmark with an approperiate name e.g. `View Source`. In the URL field, enter the contents of `bookmark.js`, making sure to replace `localhost` with the URL of the web server.
 
 ## Customise
 
@@ -36,9 +36,8 @@ $beautify = new Beautify_Html(array(
 ```
 
 ## Future Development
-- Extend syntax highlighting for CSS and JavaScript
+- Find a more reliable syntax highlighter than can handle CSS and JavaScript embedded in HTML
 - Extend code beautifying for CSS and JavaScript
-- Create link and image previewer for hyperlinks
 - Show source code in pop-up above webpage instead of new tab
 
 ## Credits
