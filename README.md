@@ -2,7 +2,7 @@
 PHP script that shows the HTML source code of a website with syntax highlighting and code beautifying for use on mobile devices.
 
 ## Setup
-Setup a web server and upload `index.php`.
+Place `index.php` and `beautify-html.php` in the root folder of a web server.
 
 Download the latest version of GeSHi (Generic Syntax Highlighter) from the official website http://qbnz.com/highlighter/ and place the uncompressed folder `geshi` in the same directory of `index.php`.
 
